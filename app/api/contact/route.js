@@ -31,9 +31,9 @@ import { Resend } from 'resend';
 import { render } from '@react-email/render';
 import ContactMessage from '@/emails/ContactMessage';
 
-const resend = new Resend(process.env.RESEND_API_KEY as string);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(req: Request) {
+export async function POST(req) {
   const { name, email, message } = await req.json();
 
   // Call the component as a function, not as JSX
