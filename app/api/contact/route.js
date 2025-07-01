@@ -33,6 +33,8 @@ import ContactMessage from '@/emails/ContactMessage';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+console.log('RESEND_API_KEY:', process.env.RESEND_API_KEY);
+
 export async function POST(req) {
   const { name, email, message } = await req.json();
 
