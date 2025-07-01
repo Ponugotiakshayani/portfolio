@@ -28,7 +28,7 @@ export default function Home() {
         </div>
 
         <h1 className="text-5xl font-extrabold tracking-tight leading-tight dark:text-white">
-          Hey, welcome! I'm Akshayani Ponugoti
+          {"Hey, welcome! I'm Akshayani Ponugoti"}
         </h1>
         <p className="max-w-5xl text-2xl font-semibold text-gray-700 dark:text-gray-300 leading-relaxed">
         A full-stack developer with 2+ years of experience crafting scalable and intuitive web applications. Take a quick peek at some of my featured work — and feel free to connect with me if something sparks your interest!
