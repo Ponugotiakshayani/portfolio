@@ -26,7 +26,6 @@
 //   }
 // }
 
-
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { render } from '@react-email/render';
@@ -37,9 +36,8 @@ const resend = new Resend(process.env.RESEND_API_KEY as string);
 export async function POST(req: Request) {
   const { name, email, message } = await req.json();
 
-  const emailHtml = await render(
-    <ContactMessage name={name} email={email} message={message} />
-  );
+  // Call the component as a function, not as JSX
+  const emailHtml = await render(ContactMessage({ name, email, message }));
 
   try {
     const data = await resend.emails.send({
@@ -55,3 +53,4 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Email send failed' }, { status: 500 });
   }
 }
+
